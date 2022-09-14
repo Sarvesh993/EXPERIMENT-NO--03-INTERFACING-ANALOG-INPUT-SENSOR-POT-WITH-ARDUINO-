@@ -67,27 +67,38 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
+ ```
+ int sensorvalue = A0;
+int LED=7;
+void setup()
+{
+  sensorvalue=0;
+  Serial.begin(9600);
+  //pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(7,OUTPUT);
+}
+void loop()
+{
+  sensorvalue = analogRead(A0);
+  //Serial.print("POT = ");
  
+  Serial.println(sensorvalue);
+  delay(5);
+  digitalWrite(LED,sensorvalue);
+  delay(50);
+ 
+}
 
-
-
-
-
-
-
-
-
+```
+ 
 **
-**Simulation output:** 
-**
+**Simulation output:**
 
 
-[My image](username.github.com/repository/img/image.jpg)
-
-
-
+![pot1](https://user-images.githubusercontent.com/93901857/189100012-1d27eb29-ad63-4c7d-810c-389dd3df22af.jpg)
+![pot2](https://user-images.githubusercontent.com/93901857/189100031-34793777-757d-4784-b368-e5f7fcc4dd54.jpg)
 
 
 
-
-**RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
+**RESULT:** 
+ Arduino uno analog input functioning is learned and interfaced with digital input switch .
